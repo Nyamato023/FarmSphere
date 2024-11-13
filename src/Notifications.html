@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmSphere - Alerts & Notifications</title>
+    <link href="../public/css/styles.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Sidebar -->
+    <div class="flex">
+      <div class="w-1/5 bg-green-600 h-screen p-5 text-white">
+        <h2 class="text-2xl font-bold mb-8">FarmSphere</h2>
+        <ul class="space-y-4">
+          <li>
+            <a href="./Dashboard.html" class="text-white py-2 px-4 block"
+              >Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="./Workers.html" class="text-white py-2 px-4 block"
+              >Workers</a
+            >
+          </li>
+          <li>
+            <a
+              href="./TaskManagement.html"
+              class="text-white py-2 px-4 block bg-green-800"
+              >Task Management</a
+            >
+          </li>
+          <li>
+            <a href="./Attendance.html" class="text-white py-2 px-4 block"
+              >Attendance</a
+            >
+          </li>
+          <li>
+            <a href="./Geofence.html" class="text-white py-2 px-4 block"
+              >Geofences</a
+            >
+          </li>
+          <li>
+            <a href="./Reports.html" class="text-white py-2 px-4 block"
+              >Reports</a
+            >
+          </li>
+
+          <li>
+            <a href="./Support.html" class="text-white py-2 px-4 block"
+              >Help and Support</a
+            >
+          </li>
+
+          <li>
+            <a href="./Settings.html" class="text-white py-2 px-4 block"
+              >Settings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex-1 p-8">
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold text-gray-800">
+            Alerts & Notifications
+          </h1>
+        </header>
+
+        <!-- Alerts Section -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            Recent Alerts
+          </h2>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="space-y-6">
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">Geofence Alert</p>
+                  <p class="text-gray-600 text-sm">
+                    The geofence boundary for the North Farm was breached.
+                    Please review the area.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">2 hours ago</span>
+              </div>
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">Attendance Reminder</p>
+                  <p class="text-gray-600 text-sm">
+                    Reminder: Worker John Doe has not checked in today. Please
+                    verify his status.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">1 day ago</span>
+              </div>
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">System Update</p>
+                  <p class="text-gray-600 text-sm">
+                    A new update for the FarmSphere app is available. Please
+                    update to the latest version.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">3 days ago</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notifications Section -->
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            Recent Notifications
+          </h2>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="space-y-6">
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">New Worker Assigned</p>
+                  <p class="text-gray-600 text-sm">
+                    A new worker, Alice Johnson, has been assigned to the South
+                    Field. Please review her profile.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">1 hour ago</span>
+              </div>
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">Geofence Created</p>
+                  <p class="text-gray-600 text-sm">
+                    A new geofence for the East Farm has been successfully
+                    created and activated.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">4 hours ago</span>
+              </div>
+              <div class="flex justify-between items-center border-b py-4">
+                <div>
+                  <p class="text-gray-800 font-semibold">Task Deadline</p>
+                  <p class="text-gray-600 text-sm">
+                    The task "Plant Seeds in North Field" is due tomorrow.
+                    Please ensure completion.
+                  </p>
+                </div>
+                <span class="text-sm text-gray-500">1 day ago</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
