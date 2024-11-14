@@ -2,7 +2,8 @@
     <h2 class="text-2xl font-bold mb-8">FarmSphere</h2>
     <ul class="space-y-4">
         <li>
-            <a href="{{ route('dashboard') }}" class="text-white py-2 px-4 block">Dashboard</a>
+            <a href="{{ route('dashboard') }}"
+                class="text-white hover:underline-offset-auto py-2 px-4 block">Dashboard</a>
         </li>
         <li>
             <a href="{{ route('workers') }}" class="text-white py-2 px-4 block">Workers</a>

@@ -41,7 +41,7 @@
         </form>
         <p class="text-center text-gray-600">
             Already have an account?
-            <a href="login.html" class="text-green-600 hover:underline">Login</a>
+            <a href="{{ route('settings') }}" class="text-green-600 hover:underline">Login</a>
         </p>
     </div>
 </body>
