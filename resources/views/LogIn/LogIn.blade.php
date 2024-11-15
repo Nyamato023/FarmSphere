@@ -14,6 +14,7 @@
             Welcome Back to FarmSphere
         </h2>
         <form action="#" method="POST" class="space-y-6">
+            @csrf
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
                 <input type="text" id="username" name="username" required
@@ -27,7 +28,7 @@
             <div class="flex items-center justify-between">
                 <a href="#" class="text-sm text-green-600 hover:underline">Forgot Password?</a>
             </div>
-            <button onclick="window.location.href='../Dashboard.html';" type="submit"
+            <button onclick="window.location.href='{{ route('dashboard') }}" type="submit"
                 class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700">
                 Login
             </button>

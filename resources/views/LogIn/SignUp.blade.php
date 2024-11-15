@@ -14,6 +14,7 @@
             Create Your Account
         </h2>
         <form action="#" method="POST" class="space-y-6">
+            @csrf
             <div>
                 <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
                 <input type="text" id="username" name="username" required
@@ -34,14 +35,14 @@
                 <input type="password" id="confirm-password" name="confirm-password" required
                     class="w-full mt-1 p-3 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" />
             </div>
-            <button onclick="window.location.href='login.html';" type="submit"
+            <button onclick="window.location.href={{ route('login') }}" type="submit"
                 class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700">
                 Sign Up
             </button>
         </form>
         <p class="text-center text-gray-600">
             Already have an account?
-            <a href="{{ route('settings') }}" class="text-green-600 hover:underline">Login</a>
+            <a href="{{ route('login') }}" class="text-green-600 hover:underline">Login</a>
         </p>
     </div>
 </body>
