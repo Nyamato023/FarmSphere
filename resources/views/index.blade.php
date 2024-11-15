@@ -53,7 +53,7 @@
     <!-- Features Section (optional) -->
     <section class="bg-white text-center mx-auto justify-center py-16 gap-8 h-1/2">
         <h2 class="text-5xl py-6 font-bold">What is FarmSphere about?</h2>
-        <div class="flex sm:flex-row">
+        <div class="flex sm:flex-row items-center justify-center">
             <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
                 <h3 class="text-4xl font-bold text-green-700">Geofencing</h3>
                 <p class="text-gray-600 mt-2 font-semibold">
@@ -78,10 +78,10 @@
 
     <!-- FAQ Section -->
     <section class="">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-            Frequently Asked Questions (FAQ)
-        </h2>
         <div class="bg-white p-6 rounded-lg shadow" x-data="{ openIndex: null }">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center p-3">
+                Frequently Asked Questions (FAQ)
+            </h2>
             <div class="space-y-6">
                 <!-- FAQ 1 -->
                 <div class="w-full mt-5">
