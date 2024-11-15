@@ -12,7 +12,7 @@
     <!-- Sidebar -->
     <x-sidebar />
 
-    <div class="flex mx-auto w-1/2">
+    <div class="flex mx-auto w-8/12">
 
         <!-- Main Content -->
         <div class="flex-1 p-8">

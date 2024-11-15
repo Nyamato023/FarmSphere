@@ -12,14 +12,12 @@
 <body class="bg-gray-100">
     <!-- Sidebar -->
     <x-sidebar />
-    <div class="flex w-1/2 mx-auto">
-
-
+    <div class="flex w-8/12 mx-auto">
         <!-- Main Content -->
         <div class="flex-1 p-8">
             <div class="flex justify-between items-center mb-6">
                 <h1 class="text-2xl font-semibold">Task Management</h1>
-                <button class="bg-green-600 text-white px-4 py-2 rounded">
+                <button @click="openModal = true" class="bg-green-600 text-white px-4 py-2 rounded">
                     Add Task
                 </button>
             </div>
@@ -59,20 +57,6 @@
                                 </button>
                             </td>
                         </tr>
-                        <tr class="border-b">
-                            <td class="py-3 px-4">Check irrigation system in zone 3</td>
-                            <td class="py-3 px-4">Jane Smith</td>
-                            <td class="py-3 px-4 text-gray-600">Completed</td>
-                            <td class="py-3 px-4">2024-11-15</td>
-                            <td class="py-3 px-4">
-                                <button class="bg-blue-500 text-white px-3 py-1 rounded">
-                                    Edit
-                                </button>
-                                <button class="bg-red-500 text-white px-3 py-1 rounded ml-2">
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
                         <!-- Additional tasks will be added here -->
                     </tbody>
                 </table>
@@ -81,7 +65,7 @@
     </div>
 
     <!-- Add Task Modal -->
-    <div x-show="openModal" x-cloak
+    <div x-data="{ openModal: false }" x-show="openModal" x-cloak
         class="fixed inset-0 bg-gray-500 bg-opacity-75 z-50 flex justify-center items-center">
         <div class="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 class="text-xl font-semibold mb-4">Add New Task</h2>
@@ -120,17 +104,7 @@
             </form>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("taskManagement", () => ({
-                openModal: false,
-                toggleModal() {
-                    this.openModal = !this.openModal;
-                },
-            }));
-        });
-    </script>
 </body>
+
 
 </html>

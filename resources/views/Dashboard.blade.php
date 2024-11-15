@@ -12,8 +12,8 @@
     <!-- Sidebar -->
     <x-sidebar />
 
-    <div class="flex w-1/2 mx-auto">
-        
+    <div class="flex w-8/12 mx-auto">
+
         <!-- Main Dashboard Content -->
         <div class="flex-1 p-8">
             <header class="flex justify-between items-center mb-8">

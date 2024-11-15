@@ -12,7 +12,7 @@
 <body class="bg-gray-100">
     <!-- Sidebar -->
     <x-sidebar />
-    <div class="flex w-1/2 mx-auto">
+    <div class="flex w-8/12 mx-auto">
 
 
         <!-- Main Content -->

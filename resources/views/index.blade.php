@@ -7,6 +7,8 @@
     <title>FarmSphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
 
 </head>
 
@@ -70,6 +72,88 @@
                 <p class="text-gray-600 mt-2 font-semibold">
                     Access real-time data on worker productivity and farm efficiency.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            Frequently Asked Questions (FAQ)
+        </h2>
+        <div class="bg-white p-6 rounded-lg shadow" x-data="{ openIndex: null }">
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="w-full mt-5">
+                    <a @click="openIndex = openIndex === 1 ? null : 1" :aria-expanded="openIndex === 1"
+                        :class="openIndex === 1 ? 'bg-[#cee8e2]' : 'bg-[#f0f9f5]'"
+                        class="hover:cursor-pointer w-full p-5 relative flex justify-between items-center">
+                        <h3 id="faq1" class="pr-12 text-lg md:text-xl lg:text-xlg font-semibold">
+                            How do I create a geofence?
+                        </h3>
+                        <i
+                            :class="openIndex === 1 ? 'fa-solid fa-chevron-up fa-xl' : 'fa-solid fa-chevron-down fa-xl'"></i>
+                    </a>
+                    <div x-show="openIndex === 1" class="p-5 font-semibold transition ease-out duration-300"
+                        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="faq1-panel"
+                        aria-labelledby="faq1">
+                        <p>
+                            To create a geofence, go to the Geofence Management page,
+                            click the "Create Geofence" button, and fill in the required
+                            fields such as name, description, and radius.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="w-full mt-5">
+                    <a @click="openIndex = openIndex === 2 ? null : 2" :aria-expanded="openIndex === 2"
+                        :class="openIndex === 2 ? 'bg-[#cee8e2]' : 'bg-[#f0f9f5]'"
+                        class="hover:cursor-pointer w-full p-5 relative flex justify-between items-center">
+                        <h3 id="faq2" class="pr-12 text-lg md:text-xl lg:text-xlg font-semibold">
+                            How can I track worker attendance?
+                        </h3>
+                        <i
+                            :class="openIndex === 2 ? 'fa-solid fa-chevron-up fa-xl' : 'fa-solid fa-chevron-down fa-xl'"></i>
+                    </a>
+                    <div x-show="openIndex === 2" class="p-5 font-semibold transition ease-out duration-300"
+                        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="faq2-panel"
+                        aria-labelledby="faq2">
+                        <p>
+                            You can track attendance through the Attendance Tracking page,
+                            where you can mark attendance for workers based on their
+                            check-ins.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="w-full mt-5">
+                    <a @click="openIndex = openIndex === 3 ? null : 3" :aria-expanded="openIndex === 3"
+                        :class="openIndex === 3 ? 'bg-[#cee8e2]' : 'bg-[#f0f9f5]'"
+                        class="hover:cursor-pointer w-full p-5 relative flex justify-between items-center">
+                        <h3 id="faq3" class="pr-12 text-lg md:text-xl lg:text-xlg font-semibold">
+                            What should I do if I face a technical issue?
+                        </h3>
+                        <i
+                            :class="openIndex === 3 ? 'fa-solid fa-chevron-up fa-xl' : 'fa-solid fa-chevron-down fa-xl'"></i>
+                    </a>
+                    <div x-show="openIndex === 3" class="p-5 font-semibold transition ease-out duration-300"
+                        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="faq3-panel"
+                        aria-labelledby="faq3">
+                        <p>
+                            If you encounter any technical issues, please submit an
+                            inquiry through the contact form below, and our support team
+                            will assist you.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
