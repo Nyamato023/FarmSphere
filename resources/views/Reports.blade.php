@@ -7,12 +7,13 @@
     <title>FarmSphere - Reports & Analytics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 </head>
 
 <body class="bg-gray-100">
     <!-- Sidebar -->
     <x-sidebar />
-    <div class="flex w-1/2 mx-auto">
+    <div class="flex w-8/12 mx-auto">
 
 
         <!-- Main Content -->

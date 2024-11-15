@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere - Geofence Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBivJGWyHia-NL-dzeJEAxd6ccdz__q5qw&libraries=drawing&callback=initMap"
         async defer></script>
@@ -15,8 +16,7 @@
     {{-- sidebar --}}
     <x-sidebar />
 
-    <div class="flex mx-auto w-1/2">
-
+    <div class="flex mx-auto w-8/12">
 
         <!-- Main Content -->
         <div class="flex-1 p-8">
@@ -62,21 +62,10 @@
                 </div>
             </section>
 
-            <!-- Map Section -->
-            <section class="mb-10">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-                    Geofence Map
-                </h2>
-                <div id="map" class="w-full h-96 bg-gray-300 rounded-lg"></div>
-                <p class="text-sm text-gray-600 mt-4">
-                    View geofences and their boundaries on the map above.
-                </p>
-            </section>
-
             <!-- Geofence Creation Modal -->
             <div id="geofenceModal"
                 class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
-                <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-3/4">
                     <h3 class="text-xl font-semibold text-gray-800 mb-4">
                         Create New Geofence
                     </h3>
@@ -95,6 +84,10 @@
                             <input type="number" id="geofenceRadius" class="w-full p-2 border rounded-lg"
                                 placeholder="Enter radius in meters" />
                         </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2">Draw Geofence on Map</label>
+                            <div id="map" class="w-full h-64 bg-gray-300 rounded-lg"></div>
+                        </div>
                         <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
                             Create Geofence
                         </button>
@@ -110,87 +103,7 @@
     </div>
 
     <!-- Script for Modal functionality and Google Maps -->
-    <script>
-        let map, drawingManager;
-
-        function initMap() {
-            // Initialize map centered on a default location
-            map = new google.maps.Map(document.getElementById("map"), {
-                center: {
-                    lat: -1.286389,
-                    lng: 36.817223
-                }, // Example: Nairobi's coordinates
-                zoom: 12,
-            });
-
-            // Initialize drawing manager
-            drawingManager = new google.maps.DrawingManager({
-                drawingMode: google.maps.drawing.OverlayType.CIRCLE,
-                circleOptions: {
-                    fillColor: "#FF0000",
-                    fillOpacity: 0.35,
-                    strokeColor: "#FF0000",
-                    strokeWeight: 2,
-                    clickable: false,
-                    editable: true,
-                    zIndex: 1,
-                },
-            });
-
-            // Set the drawing manager on the map
-            drawingManager.setMap(map);
-
-            // Listen for the circle's completion and store the geofence data
-            google.maps.event.addListener(
-                drawingManager,
-                "circlecomplete",
-                function(circle) {
-                    const center = circle.getCenter();
-                    const radius = circle.getRadius(); // In meters
-                    alert(
-                        "Geofence Created!\nCenter: " + center + "\nRadius: " + radius
-                    );
-
-                    // Optionally, you can save this data (e.g., send it to the backend)
-                    saveGeofence(center, radius);
-                }
-            );
-        }
-
-        function saveGeofence(center, radius) {
-            const name = document.getElementById("geofenceName").value;
-            const description = document.getElementById(
-                "geofenceDescription"
-            ).value;
-
-            // You can save this data to your database or Firebase here
-            console.log("Saving geofence:", {
-                name: name,
-                description: description,
-                center: {
-                    lat: center.lat(),
-                    lng: center.lng(),
-                },
-                radius: radius,
-            });
-        }
-
-        function openGeofenceModal() {
-            document.getElementById("geofenceModal").classList.remove("hidden");
-        }
-
-        function closeGeofenceModal() {
-            document.getElementById("geofenceModal").classList.add("hidden");
-        }
-
-        function editGeofence() {
-            alert("Edit Geofence functionality goes here");
-        }
-
-        function deleteGeofence() {
-            alert("Delete Geofence functionality goes here");
-        }
-    </script>
+    <script src="{{ asset('assets/js/geofence.js') }}"></script>
 </body>
 
 </html>

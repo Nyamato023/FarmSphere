@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere - Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 </head>
 
 <body class="bg-gray-100 flex">
     <!-- Sidebar -->
     <x-sidebar />
 
-    <div class="flex w-1/2 mx-auto">
-        
+    <div class="flex w-8/12 mx-auto">
+
         <!-- Main Dashboard Content -->
         <div class="flex-1 p-8">
             <header class="flex justify-between items-center mb-8">

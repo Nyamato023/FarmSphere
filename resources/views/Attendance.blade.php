@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere - Attendance Tracking</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 </head>
 
 <body class="bg-gray-100 flex">
     <!-- Sidebar -->
     <x-sidebar />
 
-    <div class="flex w-1/2 mx-auto">
+    <div class="flex w-8/12 mx-auto">
 
         <!-- Main Content -->
         <div class="flex-1 p-8">
