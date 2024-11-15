@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
+
 </head>
 
 <body style="background-image: url('{{ asset('assets/img/image.png') }}')"
@@ -49,24 +51,26 @@
     <!-- Features Section (optional) -->
     <section class="bg-white text-center mx-auto justify-center py-16 gap-8 h-1/2">
         <h2 class="text-5xl py-6 font-bold">What is FarmSphere about?</h2>
-        <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
-            <h3 class="text-4xl font-bold text-green-700">Geofencing</h3>
-            <p class="text-gray-600 mt-2 font-semibold">
-                Define farm zones and get real-time alerts for activity outside
-                boundaries.
-            </p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
-            <h3 class="text-4xl font-bold text-green-700">Worker Management</h3>
-            <p class="text-gray-600 mt-2 font-semibold">
-                Easily track, assign tasks, and manage worker profiles.
-            </p>
-        </div>
-        <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
-            <h3 class="text-4xl font-bold text-green-700">Real-Time Insights</h3>
-            <p class="text-gray-600 mt-2 font-semibold">
-                Access real-time data on worker productivity and farm efficiency.
-            </p>
+        <div class="flex sm:flex-row">
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
+                <h3 class="text-4xl font-bold text-green-700">Geofencing</h3>
+                <p class="text-gray-600 mt-2 font-semibold">
+                    Define farm zones and get real-time alerts for activity outside
+                    boundaries.
+                </p>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
+                <h3 class="text-4xl font-bold text-green-700">Worker Management</h3>
+                <p class="text-gray-600 mt-2 font-semibold">
+                    Easily track, assign tasks, and manage worker profiles.
+                </p>
+            </div>
+            <div class="w-full sm:w-1/2 lg:w-1/4 p-4 text-center underline-animation">
+                <h3 class="text-4xl font-bold text-green-700">Real-Time Insights</h3>
+                <p class="text-gray-600 mt-2 font-semibold">
+                    Access real-time data on worker productivity and farm efficiency.
+                </p>
+            </div>
         </div>
     </section>
 
