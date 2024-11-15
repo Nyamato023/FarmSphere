@@ -7,6 +7,7 @@
     <title>FarmSphere - Task Management</title>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
 </head>
 
 <body class="bg-gray-100">

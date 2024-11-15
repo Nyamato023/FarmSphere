@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="//unpkg.com/alpinejs" defer></script>
-
 </head>
+
 
 <body style="background-image: url('{{ asset('assets/img/image.png') }}')"
     class="bg-cover bg-center bg-no-repeat text-gray-800">
     <!-- Navigation Bar -->
     <nav class="w-full bg-green-800 py-10 px-4 shadow-lg">
         <div class="container mx-auto flex items-center justify-between">
-            <a href="./index.html" class="underline-animation text-2xl text-yellow-300 font-bold">FarmSphere</a>
+            <div class="flex">
+                <img src="{{ asset('assets/img/favicon.png') }}" alt="icon" class="w-10 h-10 mr-4">
+                <a href="{{ route('landing') }}"
+                    class="underline-animation text-2xl text-yellow-300 font-bold">FarmSphere</a>
+            </div>
+
             <div>
                 <a href="{{ route('login') }}"
                     class="text-white font-semibold hover:text-green-600 hover:bg-yellow-300 rounded-[16px] transition-all py-2 px-4 mx-4">Login</a>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FarmSphere - Geofence Management</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBivJGWyHia-NL-dzeJEAxd6ccdz__q5qw&libraries=drawing&callback=initMap"
         async defer></script>

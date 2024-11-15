@@ -1,6 +1,9 @@
 <div class="fixed w-1/8 bg-green-600 h-screen p-5 text-white">
     <link rel="stylesheet" href="{{ asset('assets/css/index.css') }}">
-    <h2 class="text-2xl font-bold mb-8">FarmSphere</h2>
+    <div class="flex py-4">
+        <img src="{{ asset('assets/img/favicon.png') }}" alt="icon" class="w-10 h-10 mr-4">
+        <a href="{{ route('landing') }}" class="underline-animation text-2xl text-yellow-300 font-bold">FarmSphere</a>
+    </div>
     <ul class="space-y-4">
         <li>
             <a href="{{ route('dashboard') }}" class="text-white underline-animation py-2 px-4 block">Dashboard</a>
