@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/Dashboard', function () {
@@ -41,3 +41,11 @@ Route::get('/TaskManagement', function () {
 Route::get('/Workers', function () {
     return view('Workers');
 })->name('workers');
+
+Route::get('/Login', function () {
+    return view('LogIn.LogIn');
+})->name('login');
+
+Route::get('/SignUo', function () {
+    return view('LogIn.SignUp');
+})->name('signup');
