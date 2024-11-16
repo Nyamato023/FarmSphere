@@ -42,30 +42,36 @@ class ActivityController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $activity = Activity::with('workers')->findOrFail($id);
+        return view('activities.show', compact('activity'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $activity = Activity::findOrFail($id);
+        return view('activities.edit', compact('activity'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Update an activity
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $activity = Activity::findOrFail($id);
+        $activity->update($request->all());
+        return redirect()->route('TaskManagement');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    // Delete an activity
+    public function destroy($id)
     {
-        //
+        $activity = Activity::findOrFail($id);
+        $activity->delete();
+        return redirect()->route('TaskManagement');
     }
 }

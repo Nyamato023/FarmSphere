@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('worker_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('status');
+            $table->enum('status',['present', 'absent'.'on Leave']);
             $table->date('date');
         });
     }

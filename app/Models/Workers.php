@@ -18,8 +18,8 @@ class Workers extends Model
     {
         return $this->belongsToMany(Geofence::class);
     }
-    public function attendance()
+    public function attendances()
     {
-        return $this->belongsTo(Attendance::class);
+        return $this->hasMany(Attendance::class);
     }
 }

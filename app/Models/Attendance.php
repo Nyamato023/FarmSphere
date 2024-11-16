@@ -9,7 +9,7 @@ class Attendance extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date'];
+    protected $fillable = ['worker_id', 'status', 'marked_at'];
     public function Workers()
     {
         return $this->hasMany(Workers::class);

@@ -95,7 +95,7 @@
 
             <!-- Edit Attendance Modal -->
             <div id="editAttendanceModal"
-                class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+                class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                 <div class="bg-white p-8 rounded-lg shadow-lg w-96">
                     <h2 class="text-xl font-semibold mb-4">Edit Attendance</h2>
                     <form id="editAttendanceForm">
