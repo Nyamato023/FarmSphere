@@ -1,7 +1,7 @@
 let searchBox;
 
 function initMap() {
-    map = new google.maps.Map(document.getElementById("map-container"), {
+    const map = new google.maps.Map(document.getElementById("map-container"), {
         center: { lat: -0.4371, lng: 36.9580 },
         zoom: 13,
     });
@@ -16,6 +16,7 @@ function initMap() {
     });
 
     let markers = [];
+    let selectedCircle = null;
 
     // Listen for the event fired when the user selects a prediction.
     searchBox.addListener("places_changed", () => {
@@ -29,7 +30,6 @@ function initMap() {
         markers.forEach((marker) => marker.setMap(null));
         markers = [];
 
-        // Get the bounds for the map.
         const bounds = new google.maps.LatLngBounds();
 
         places.forEach((place) => {
@@ -48,7 +48,6 @@ function initMap() {
             );
 
             if (place.geometry.viewport) {
-                // Extend the map to the place's viewport.
                 bounds.union(place.geometry.viewport);
             } else {
                 bounds.extend(place.geometry.location);
@@ -58,8 +57,8 @@ function initMap() {
         map.fitBounds(bounds);
     });
 
-    // Initialize Drawing Manager and other features (existing code)
-    drawingManager = new google.maps.drawing.DrawingManager({
+    // Initialize Drawing Manager
+    const drawingManager = new google.maps.drawing.DrawingManager({
         drawingMode: google.maps.drawing.OverlayType.CIRCLE,
         drawingControl: true,
         drawingControlOptions: {
@@ -78,10 +77,22 @@ function initMap() {
 
     drawingManager.setMap(map);
 
-    // Event listener for drawing manager
-    google.maps.event.addListener(drawingManager, "overlaycomplete", function (event) {
+    // Event listener for drawing a circle
+    google.maps.event.addListener(drawingManager, "overlaycomplete", (event) => {
         if (event.type === google.maps.drawing.OverlayType.CIRCLE) {
-            setSelectedShape(event.overlay);
+            if (selectedCircle) {
+                selectedCircle.setMap(null); // Remove the previously selected circle
+            }
+            selectedCircle = event.overlay;
+
+            // Update radius input field when circle is drawn
+            const radiusInput = document.getElementById("geofenceRadius");
+            radiusInput.value = Math.round(selectedCircle.getRadius());
+
+            // Attach event listener to update radius dynamically when resized
+            google.maps.event.addListener(selectedCircle, "radius_changed", () => {
+                radiusInput.value = Math.round(selectedCircle.getRadius());
+            });
         }
     });
 
