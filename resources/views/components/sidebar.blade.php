@@ -19,7 +19,8 @@
             <a href="{{ route('attendance') }}" class="text-white underline-animation py-2 px-4 block">Attendance</a>
         </li>
         <li>
-            <a href="{{ route('geofence') }}" class="text-white underline-animation py-2 px-4 block">Geofences</a>
+            <a href="{{ route('geofences.index') }}"
+                class="text-white underline-animation py-2 px-4 block">Geofences</a>
         </li>
         <li>
             <a href="{{ route('reports') }}" class="text-white underline-animation py-2 px-4 block">Reports</a>

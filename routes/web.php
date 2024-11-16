@@ -14,9 +14,9 @@ Route::get('/Attendance', function () {
     return view('Attendance');
 })->name('attendance');
 
-Route::get('/Geofence', function () {
-    return view('Geofence');
-})->name('geofence');
+// Route::get('/Geofence', function () {
+//     return view('Geofence');
+// })->name('geofence');
 
 Route::get('/Notifications', function () {
     return view('Notifications');
@@ -50,6 +50,12 @@ Route::get('/Workers', function () {
 //     return view('LogIn.SignUp');
 // })->name('signup');
 
+
+use App\Http\Controllers\FarmController;
+
+Route::get('/geofences', [FarmController::class, 'index'])->name('geofences.index');
+Route::post('/geofences', [FarmController::class, 'store'])->name('geofences.store');
+Route::delete('/geofences/{id}', [FarmController::class, 'destroy'])->name('geofences.destroy');
 
 
 

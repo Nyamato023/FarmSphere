@@ -36,7 +36,7 @@
         </form>
         <p class="text-center text-gray-600">
             Don’t have an account?
-            <a href="signup.html" class="text-green-600 hover:underline">Sign Up</a>
+            <a href="{{ route('signup') }}" class="text-green-600 hover:underline">Sign Up</a>
         </p>
     </div>
 </body>
