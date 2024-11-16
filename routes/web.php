@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\WorkersController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\GeofenceController;
 
 Route::get('/', function () {
     return view('index');
@@ -81,3 +85,14 @@ Route::post('/login', function (\Illuminate\Http\Request $request) {
     // For now, just redirect to dashboard after login
     return redirect()->route('dashboard');
 });
+// Resource route for AttendanceController
+Route::resource('attendances', AttendanceController::class);
+
+// Resource route for GeofenceController
+Route::resource('geofences', GeofenceController::class);
+
+// Resource route for WorkerController
+Route::resource('workers', WorkersController::class);
+
+// Resource route for ActivityController
+Route::resource('activities', ActivityController::class);
